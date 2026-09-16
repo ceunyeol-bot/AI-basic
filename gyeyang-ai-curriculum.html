@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>계양을 지역위원회 AI교육 커리큘럼</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F3F1EC;
+    --paper: #FFFFFF;
+    --ink: #22291F;
+    --ink-soft: #5B6459;
+    --teal: #2F6B57;
+    --teal-deep: #1E4A3C;
+    --gold: #B9862F;
+    --line: #DEDACC;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+
+  .wrap{ max-width: 640px; margin: 0 auto; padding: 0 20px; }
+
+  /* Hero */
+  .hero{
+    background: var(--teal-deep);
+    color: #F3F1EC;
+    padding: 44px 20px 34px;
+    text-align: left;
+  }
+  .hero-inner{ max-width: 600px; margin: 0 auto; }
+  .hero .eyebrow{
+    font-size: 13px;
+    color: #A9C9BB;
+    margin: 0 0 10px;
+    letter-spacing: 0.02em;
+  }
+  .hero h1{
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.35;
+    margin: 0 0 14px;
+  }
+  .hero p{
+    font-size: 15px;
+    color: #D8E6DE;
+    margin: 0;
+    max-width: 46ch;
+  }
+  .hero .stats{
+    display:flex;
+    gap: 22px;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+  }
+  .hero .stat b{
+    font-family: var(--serif);
+    font-size: 22px;
+    display:block;
+    color: #F3F1EC;
+  }
+  .hero .stat span{
+    font-size: 12.5px;
+    color: #A9C9BB;
+  }
+
+  /* Phase sections */
+  .phase{
+    margin-top: 34px;
+  }
+  .phase-head{
+    display:flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 14px;
+  }
+  .phase-head .tag{
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .phase-head h2{
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--ink);
+  }
+  .phase-desc{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  /* Chapter cards (accordion) */
+  .chapter{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .chapter summary{
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .chapter summary::-webkit-details-marker{ display:none; }
+  .chapter .num{
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--teal);
+    min-width: 30px;
+  }
+  .chapter .title{
+    flex: 1;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .chapter .chev{
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    color: var(--ink-soft);
+    transition: transform 0.2s ease;
+  }
+  .chapter[open] .chev{ transform: rotate(180deg); }
+
+  .chapter .body{
+    padding: 0 16px 18px 60px;
+  }
+  .chapter .body ul{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .chapter .body li{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .chapter .body li:last-child{ margin-bottom: 0; }
+  .chapter .body li b{
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Footer note */
+  .footnote{
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .footnote b{ color: var(--ink); }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #171A15;
+      --paper: #20241D;
+      --ink: #EDEAE0;
+      --ink-soft: #A6ADA0;
+      --line: #343A2F;
+      --teal: #6FBFA1;
+    }
+    .hero{ background:#0F241D; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">계양을 지역위원회 · 여성위원 대상</p>
+      <h1>AI 활용 교육 커리큘럼</h1>
+      <p>50~60대 맞춤 진행 방식과 지역위원회 실무에 바로 쓰는 실습으로 구성한 10개 챕터입니다.</p>
+      <div class="stats">
+        <div class="stat"><b>10</b><span>챕터</span></div>
+        <div class="stat"><b>5</b><span>단계 구성</span></div>
+        <div class="stat"><b>2인 1조</b><span>실습 방식</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="tag">STAGE 1</span>
+        <h2>학습 동기부여</h2>
+      </div>
+      <p class="phase-desc">빠르게 달라지는 AI 현황을 보여주고, 지금 배워야 하는 이유를 짚습니다.</p>
+
+      <details class="chapter" open>
+        <summary>
+          <span class="num">01</span>
+          <span class="title">지금, 왜 AI를 배워야 하는가</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>불과 1~2년 사이 AI가 얼마나 빠르게 달라졌는지 <b>체감 사례</b>로 보여주기 (사진 복원, 글쓰기, 대화 상담 등 눈에 보이는 변화)</li>
+            <li>"어렵고 먼 기술"이 아니라 이미 스마트폰 안에 들어와 있는 도구라는 점 전달</li>
+            <li>이 변화 속도를 놓치면 자녀·손주 세대와의 대화 격차, 정보 접근 격차로 이어질 수 있다는 <b>필요성</b> 강조</li>
+            <li>"잘하려고 배우는 게 아니라, 뒤처지지 않으려고 오늘 한 걸음 떼는 것"이라는 메시지로 부담 낮추기</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="tag">STAGE 2</span>
+        <h2>기초 다지기</h2>
+      </div>
+      <p class="phase-desc">스마트폰으로 직접 설치하고, 질문하는 법을 익힙니다.</p>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">02</span>
+          <span class="title">AI란 무엇인가</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>"동네에서 제일 아는 게 많은데 24시간 물어볼 수 있는 이웃"에 비유</li>
+            <li>챗GPT·클로드가 무엇이고 왜 지금 알아야 하는지</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">03</span>
+          <span class="title">스마트폰으로 AI 시작하기</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>앱 설치·가입 실습 (안드로이드 / 아이폰 화면 구분 안내)</li>
+            <li>2인 1조 실습, 종이 인쇄물 병행 배포</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">04</span>
+          <span class="title">좋은 질문이 좋은 답을 만든다</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>짧게 묻지 않고 <b>"상황 + 원하는 답의 형태"</b>를 넣어 묻는 법</li>
+            <li>실습: "치매" 검색 vs "부모님 건망증, 병원 가기 전 확인할 것" 비교</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="tag">STAGE 3</span>
+        <h2>실무 활용</h2>
+      </div>
+      <p class="phase-desc">지역위원회 업무에 바로 적용해봅니다.</p>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">05</span>
+          <span class="title">인사말·발언문, AI로 초안 잡기</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>행사·회의·경조사 인사말 초안 작성 실습</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">06</span>
+          <span class="title">SNS·카드뉴스 콘텐츠 만들기</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>게시글 문구, 카드뉴스 문구 초안 작성</li>
+            <li>포스터·현수막 문구 시안 만들어보기</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">07</span>
+          <span class="title">민원·회의 내용 정리하기</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>주민 의견 요약 실습</li>
+            <li>회의록 정리 실습</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="tag">STAGE 4</span>
+        <h2>판단력 강화</h2>
+      </div>
+      <p class="phase-desc">복잡한 사안 앞에서 생각을 정리하는 도구로 씁니다.</p>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">08</span>
+          <span class="title">복잡한 정책·제도, 양쪽 입장으로 정리하기</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>"AI가 답을 정해준다"가 아닌 <b>"생각을 정리하는 도구"</b>라는 프레임</li>
+            <li>실습: "○○ 정책 도입 배경과 찬반 논리 각각 정리해줘"</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">09</span>
+          <span class="title">경제·역사 이슈, 다각도로 확인하기</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>경제 이슈를 생활 단위로 번역해 묻는 법 (예: 금리 인상 → 우리 동네 자영업자 영향)</li>
+            <li>역사적 사안의 서로 다른 해석을 함께 확인하는 법</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="tag">STAGE 5</span>
+        <h2>마무리</h2>
+      </div>
+      <p class="phase-desc">안전하게, 그리고 꾸준히 쓰기 위한 다짐입니다.</p>
+
+      <details class="chapter">
+        <summary>
+          <span class="num">10</span>
+          <span class="title">AI 활용의 함정과 나의 실천 다짐</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="body">
+          <ul>
+            <li>할루시네이션 위험, 대외 발언 시 단정적 인용 금지</li>
+            <li>중요 사안은 뉴스·공식자료로 교차 확인하는 원칙</li>
+            <li>"이번 주 안에 써볼 것" 1가지씩 정하고 마무리</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="footnote">
+      <b>진행 원칙</b> · 화면 글씨 크게, 실습 단계는 종이 인쇄물 병행 배포. 2인 1조로 서로 확인하며 진행해 혼자 헤매다 포기하는 경우를 방지합니다.
+    </div>
+
+  </div>
+
+</body>
+</html>
